@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Final Project - The U.S. Congress">
+    <meta name="author" content="Chi Hoang">
+    <meta name="generator" content="">
+    <title>The U.S. Congress</title>
+
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/theme_resume.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">The U.S. Congress</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="members.html">Members <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</header>
+
+<main role="main">
+
+  <div class="container my-4">
+    <div class="card w-100">
+      <div class="card-header text-center">
+        List of Congress Members
+      </div>
+      <div class="card-body bg-primary">
+        
+        <form>
+          <div class="form-row mt-4">
+            <div class="col-3">
+              <div class="input-group mb-2">
+                <input type="text" class="form-control" placeholder="Search By Name"
+                    id="searchByName"
+                />
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                      <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="form-group">
+                <select class="form-control" id="searchByChamber">
+                  <option value="all" selected>-- By Chamber --</option>
+                  <option value="all">All</option>
+                  <option value="house">House of Representatives</option>
+                  <option value="senate">Senates</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="form-group">
+                <select class="form-control" id="searchByParty">
+                  <option value="all" selected>-- By Party --</option>
+                  <option value="all">All</option>
+                  <option value="D">Democrat</option>
+                  <option value="R">Republican</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="form-group">
+                <select class="form-control" id="searchByState">
+                  <option value="all" selected>-- By State --</option>
+                  <option value="all">All</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div id="searchResultDiv" class="row my-3">
+        </div>
+      </div>
+    </div>
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>&copy; UMD FALL2020 INST-377 Group 18. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</main>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="js/bootstrap.bundle.min.js"></script>
+  <script src="members.js"></script>
+</html>
