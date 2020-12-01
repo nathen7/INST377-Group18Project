@@ -8,6 +8,7 @@
     <meta name="generator" content="">
     <title>The U.S. Congress</title>
 
+    <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
@@ -39,66 +40,39 @@
 </header>
 
 <main role="main">
-
-  <div class="container my-4">
-    <div class="card w-100">
-      <div class="card-header text-center bg-primary text-white">
-        List of Congress Members
-      </div>
-      <div class="card-body ">
-        
-        <form>
-          <div class="form-row mt-4">
-            <div class="col-3">
-              <div class="input-group mb-2">
-                <input type="text" class="form-control" placeholder="Search By Name"
-                    id="searchByName"
-                />
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-                      <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="form-group">
-                <select class="form-control" id="searchByChamber">
-                  <option value="all" selected>-- By Chamber --</option>
-                  <option value="all">All</option>
-                  <option value="house">House of Representatives</option>
-                  <option value="senate">Senates</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="form-group">
-                <select class="form-control" id="searchByParty">
-                  <option value="all" selected>-- By Party --</option>
-                  <option value="all">All</option>
-                  <option value="D">Democrat</option>
-                  <option value="R">Republican</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="form-group">
-                <select class="form-control" id="searchByState">
-                  <option value="all" selected>-- By State --</option>
-                  <option value="all">All</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </form>
-
-        <div id="searchResultDiv" class="row my-3">
+  <div class="container ">
+    <!-- <div class="card mx-auto border-0" style="width: 40rem;">
+        <img src="https://github.com/unitedstates/images/raw/gh-pages/congress/225x275/L000577.jpg" 
+            class="card-img-top img-thumbnail border-0 w-50 mx-auto" 
+            alt="Member Picture">
+        <div class="card-body border pt-20 mt-4">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
+    </div> -->
+
+    <div class="card w-100 mt-4">
+      <div class="card-header text-center bg-primary text-white">
+        Profile
+      </div>
+      <div class="card-body">
+
+        <div class="row" id="profileInfo"></div>
+
+        <div class="card w-100 mt-3">
+          <div class="card-header">
+            THE MOST RECENT ACTIVE BILLS <span class="badge badge-primary" id="billCount"></span>
+          </div>
+          <div class="card-body">
+            <div class="list-group" id="billList"></div>
+          </div>
+        </div>
+
       </div>
     </div>
+
+    
+
   </div><!-- /.container -->
 
 
@@ -110,5 +84,5 @@
 </main>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="js/bootstrap.bundle.min.js"></script>
-  <script src="members.js"></script>
+  <script src="memberProfile.js"></script>
 </html>

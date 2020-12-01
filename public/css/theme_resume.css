@@ -6075,7 +6075,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #bd5d38 !important;
+  background-color: #e4701e !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -10033,9 +10033,6 @@ p.lead {
 @media (min-width: 992px) {
   #sideNav {
     text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
     display: flex;
     flex-direction: column;
     width: 17rem;

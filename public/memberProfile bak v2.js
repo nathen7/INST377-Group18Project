@@ -1,55 +1,69 @@
 function displayProfile(profile) {
   // display profile information
   const currentRole = profile.roles[0];// role is an array, we only take the first element to get the latest role
-  const profileNameCtrl = document.querySelector("#profileName");
-  profileNameCtrl.innerHTML = `${profile.first_name} ${profile.last_name}`;
-  const profileImgCtrl = document.querySelector("#profileImg");
-  profileImgCtrl.setAttribute('src', 
-      'https://github.com/unitedstates/images/raw/gh-pages/congress/225x275/'+profile.id+'.jpg');
-
-  const profileFullNameCtrl = document.querySelector("#profileFullName");
-  profileFullNameCtrl.innerHTML = `${profile.first_name} <span class="text-primary">${profile.last_name}</span>`;
-
   const profileInfoCtrl = document.querySelector('#profileInfo');
   profileInfoCtrl.innerHTML = `
-    <div class="subheading mb-2">
-      Office: ${currentRole.office} · Phone: ${currentRole.phone}
-    </div>
-    <div class=" row">
-      <label class="col-sm-4 col-form-label">Chamber</label>
-      <div class="col-sm-8">
-        ${currentRole.chamber}
+    <div class="col-11">
+      <div class="card mb-3 border-0" style="">
+        <div class="row no-gutters ">
+          <div class="col-md-3 bg-primary d-flex justify-content-center align-items-center">
+            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" 
+                  style="width: 144px; height: 144px"
+                  src="https://github.com/unitedstates/images/raw/gh-pages/congress/225x275/${profile.id}.jpg" 
+                  alt="Member Picture" />
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h2 class="mb-0">
+                ${profile.first_name}
+                <span class="text-primary">${profile.last_name}</span>
+              </h2>
+              <div class="subheading mb-2">
+                Office: ${currentRole.office} · Phone: ${currentRole.phone}
+              </div>
+              <div class=" row">
+                <label class="col-sm-4 col-form-label">Chamber</label>
+                <div class="col-sm-8">
+                  ${currentRole.chamber}
+                </div>
+              </div>
+              <div class=" row">
+                <label class="col-sm-4 col-form-label">Title</label>
+                <div class="col-sm-8">
+                  ${currentRole.title}
+                </div>
+              </div>
+              <div class=" row">
+                <label class="col-sm-4 col-form-label">State</label>
+                <div class="col-sm-8">
+                  ${currentRole.state}
+                </div>
+              </div>
+              <div class=" row">
+                <label class="col-sm-4 col-form-label">Party</label>
+                <div class="col-sm-8">
+                  ${currentRole.party}
+                </div>
+              </div>
+              <div class=" row">
+                <label class="col-sm-4 col-form-label">Year Served</label>
+                <div class="col-sm-8">
+                  ${currentRole.start_date} to ${currentRole.end_date}
+                </div>
+              </div>
+              <div class=" row">
+                <label class="col-sm-4 col-form-label">Contact Form</label>
+                <div class="col-sm-8">
+                  <a href="${currentRole.contact_form}" target="_blank">${currentRole.contact_form}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class=" row">
-      <label class="col-sm-4 col-form-label">Title</label>
-      <div class="col-sm-8">
-        ${currentRole.title}
-      </div>
-    </div>
-    <div class=" row">
-      <label class="col-sm-4 col-form-label">State</label>
-      <div class="col-sm-8">
-        ${currentRole.state}
-      </div>
-    </div>
-    <div class=" row">
-      <label class="col-sm-4 col-form-label">Party</label>
-      <div class="col-sm-8">
-        ${currentRole.party}
-      </div>
-    </div>
-    <div class=" row">
-      <label class="col-sm-4 col-form-label">Year Served</label>
-      <div class="col-sm-8">
-        ${currentRole.start_date} to ${currentRole.end_date}
-      </div>
-    </div>
-    <div class=" row">
-      <label class="col-sm-4 col-form-label">Contact Form</label>
-      <div class="col-sm-8">
-        <a href="${currentRole.contact_form}" target="_blank">${currentRole.contact_form}</a>
-      </div>
+    <div class="col-1">
+        <div class="w-50 vertical-line-party-${profile.current_party}">&nbsp;</div>
     </div>
     `;
 }
