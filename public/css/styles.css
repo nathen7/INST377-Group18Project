@@ -102,6 +102,21 @@ body {
 }
 
 
+.nav-tabs {
+  border-bottom: none!important;
+}
+
+.nav-tabs .nav-link {
+  border: none!important;
+  color: #ffffff;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  background-color: transparent!important;
+  color: #ffffff;
+}
+
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
