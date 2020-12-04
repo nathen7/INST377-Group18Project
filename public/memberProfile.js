@@ -76,10 +76,10 @@ function displayProfile(profile) {
     `;
 
   const facebook = document.querySelector('#facebook')
-  // const youtube = document.querySelector('#youtube')
+  const youtube = document.querySelector('#youtube')
   const twitter = document.querySelector('#twitter')
   facebook.href = `https://facebook.com/${profile.facebook_account}`
-  // youtube.href = `http://youtube.com/${profile.youtube_account}`
+  youtube.href = `http://youtube.com/${profile.youtube_account}`
   twitter.href = `https://twitter.com/${profile.twitter_account}`
 }
 
