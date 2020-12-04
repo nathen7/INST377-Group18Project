@@ -1,8 +1,16 @@
 function displayProfile(profile) {
   // display profile information
   const currentRole = profile.roles[0];// role is an array, we only take the first element to get the latest role
+
+  let termsServed = ''
+  for (let i = 0; i < profile.roles.length; i++) {
+    if (i != 0) termsServed += ', '
+    termsServed += `${profile.roles[i].start_date.substring(0,4)}-${profile.roles[i].end_date.substring(0,4)}`
+  }
+
   const profileNameCtrl = document.querySelector("#profileName");
   profileNameCtrl.innerHTML = `${profile.first_name} ${profile.last_name}`;
+  
   const profileImgCtrl = document.querySelector("#profileImg");
   profileImgCtrl.setAttribute('src', 
       'https://github.com/unitedstates/images/raw/gh-pages/congress/225x275/'+profile.id+'.jpg');
@@ -42,7 +50,7 @@ function displayProfile(profile) {
     <div class=" row">
       <label class="col-sm-4 col-form-label">Year Served</label>
       <div class="col-sm-8">
-        ${currentRole.start_date} to ${currentRole.end_date}
+        ${termsServed}
       </div>
     </div>
     <div class=" row">
