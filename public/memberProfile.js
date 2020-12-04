@@ -2,6 +2,8 @@ function displayProfile(profile) {
   // display profile information
   const currentRole = profile.roles[0];// role is an array, we only take the first element to get the latest role
 
+  console.log(profile);
+
   let termsServed = ''
   for (let i = 0; i < profile.roles.length; i++) {
     if (i != 0) termsServed += ', '
@@ -23,8 +25,6 @@ function displayProfile(profile) {
 
   const profileFullNameCtrl = document.querySelector("#profileFullName");
   profileFullNameCtrl.innerHTML = `${profile.first_name} <span class="text-primary">${profile.last_name}</span>`;
-
-  console.log(currentRole)
 
   const profileInfoCtrl = document.querySelector('#profileInfo');
   profileInfoCtrl.innerHTML = `
@@ -74,6 +74,13 @@ function displayProfile(profile) {
       </div>
     </div>
     `;
+
+  const facebook = document.querySelector('#facebook')
+  // const youtube = document.querySelector('#youtube')
+  const twitter = document.querySelector('#twitter')
+  facebook.href = `https://facebook.com/${profile.facebook_account}`
+  // youtube.href = `http://youtube.com/${profile.youtube_account}`
+  twitter.href = `https://twitter.com/${profile.twitter_account}`
 }
 
 function displayBills(bills) {
