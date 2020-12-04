@@ -89,6 +89,9 @@ function displayBills(bills) {
 
     const billListCtrl = document.querySelector('#billList');
     const items = bills.map((bill, index) => {
+        
+        console.log(bill)
+
         return `
             <!-- Button trigger modal -->
             <a href="javascript:;" 
@@ -114,6 +117,14 @@ function displayBills(bills) {
                     <label class="col-sm-4 col-form-label">Title</label>
                     <div class="col-sm-8">
                       <a href="${bill.congressdotgov_url}" target="_blank">${bill.title}</a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-4 col-form-label">Sponsor</label>
+                    <div class="col-sm-8">
+                      <label class="form-control-plaintext">
+                        <a href="/memberProfile.html?memberId=${bill.sponsor_id}" target="_blank">${bill.sponsor_name}</a>
+                      </label>
                     </div>
                   </div>
                   <div class=" row">
