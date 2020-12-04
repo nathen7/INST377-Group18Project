@@ -8,6 +8,12 @@ function displayProfile(profile) {
     termsServed += `${profile.roles[i].start_date.substring(0,4)}-${profile.roles[i].end_date.substring(0,4)}`
   }
 
+  let committees = ''
+  for (let i = 0; i < currentRole.committees.length; i++) {
+    if (i != 0) committees += ', '
+    committees += `${currentRole.committees[i].name}`
+  }
+
   const profileNameCtrl = document.querySelector("#profileName");
   profileNameCtrl.innerHTML = `${profile.first_name} ${profile.last_name}`;
   
@@ -17,6 +23,8 @@ function displayProfile(profile) {
 
   const profileFullNameCtrl = document.querySelector("#profileFullName");
   profileFullNameCtrl.innerHTML = `${profile.first_name} <span class="text-primary">${profile.last_name}</span>`;
+
+  console.log(currentRole)
 
   const profileInfoCtrl = document.querySelector('#profileInfo');
   profileInfoCtrl.innerHTML = `
@@ -45,6 +53,12 @@ function displayProfile(profile) {
       <label class="col-sm-4 col-form-label">Party</label>
       <div class="col-sm-8">
         ${currentRole.party}
+      </div>
+    </div>
+    <div class=" row">
+      <label class="col-sm-4 col-form-label">Committees</label>
+      <div class="col-sm-8">
+        ${committees}
       </div>
     </div>
     <div class=" row">
