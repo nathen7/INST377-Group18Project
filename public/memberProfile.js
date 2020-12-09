@@ -1,8 +1,24 @@
 function displayProfile(profile) {
   // display profile information
   const currentRole = profile.roles[0];// role is an array, we only take the first element to get the latest role
+
+  console.log(profile);
+
+  let termsServed = ''
+  for (let i = 0; i < profile.roles.length; i++) {
+    if (i != 0) termsServed += ', '
+    termsServed += `${profile.roles[i].start_date.substring(0,4)}-${profile.roles[i].end_date.substring(0,4)}`
+  }
+
+  let committees = ''
+  for (let i = 0; i < currentRole.committees.length; i++) {
+    if (i != 0) committees += ', '
+    committees += `${currentRole.committees[i].name}`
+  }
+
   const profileNameCtrl = document.querySelector("#profileName");
   profileNameCtrl.innerHTML = `${profile.first_name} ${profile.last_name}`;
+  
   const profileImgCtrl = document.querySelector("#profileImg");
   profileImgCtrl.setAttribute('src', 
       'https://github.com/unitedstates/images/raw/gh-pages/congress/225x275/'+profile.id+'.jpg');
@@ -40,9 +56,15 @@ function displayProfile(profile) {
       </div>
     </div>
     <div class=" row">
+      <label class="col-sm-4 col-form-label">Committees</label>
+      <div class="col-sm-8">
+        ${committees}
+      </div>
+    </div>
+    <div class=" row">
       <label class="col-sm-4 col-form-label">Year Served</label>
       <div class="col-sm-8">
-        ${currentRole.start_date} to ${currentRole.end_date}
+        ${termsServed}
       </div>
     </div>
     <div class=" row">
@@ -52,6 +74,13 @@ function displayProfile(profile) {
       </div>
     </div>
     `;
+
+  const facebook = document.querySelector('#facebook')
+  const youtube = document.querySelector('#youtube')
+  const twitter = document.querySelector('#twitter')
+  facebook.href = `https://facebook.com/${profile.facebook_account}`
+  youtube.href = `http://youtube.com/${profile.youtube_account}`
+  twitter.href = `https://twitter.com/${profile.twitter_account}`
 }
 
 function displayBills(bills) {
@@ -60,6 +89,9 @@ function displayBills(bills) {
 
     const billListCtrl = document.querySelector('#billList');
     const items = bills.map((bill, index) => {
+        
+        console.log(bill)
+
         return `
             <!-- Button trigger modal -->
             <a href="javascript:;" 
@@ -85,6 +117,14 @@ function displayBills(bills) {
                     <label class="col-sm-4 col-form-label">Title</label>
                     <div class="col-sm-8">
                       <a href="${bill.congressdotgov_url}" target="_blank">${bill.title}</a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-4 col-form-label">Sponsor</label>
+                    <div class="col-sm-8">
+                      <label class="form-control-plaintext">
+                        <a href="/memberProfile.html?memberId=${bill.sponsor_id}" target="_blank">${bill.sponsor_name}</a>
+                      </label>
                     </div>
                   </div>
                   <div class=" row">
