@@ -14,7 +14,10 @@ function findMatches(memberList, searchingName, searchingParty, searchingState) 
   const list = memberList.filter(member => {
     const nameRegex = new RegExp(searchingName, 'gi');
     return (member.first_name.match(nameRegex) || member.last_name.match(nameRegex)) && 
-      (searchingParty == 'all' || member.party == searchingParty) &&
+      (searchingParty == 'all' || member.party == searchingParty 
+        || (searchingParty == 'I' 
+            && (member.party == 'I' 
+                || member.party == 'ID'))) &&
       (searchingState == 'all' || member.state == searchingState)
     ;
   });
@@ -95,6 +98,7 @@ function displayStates(membersList) {
       <option value="${state.code}">${state.label}</option>
     `;
   }).join('');
+  // html looks like '<option value="TN">TN</option><option value="MD">MD</option>'
 
   const searchByState = document.querySelector('#searchByState');
   searchByState.innerHTML += html;
@@ -109,6 +113,7 @@ fetch('/house/members', {
     'Content-Type': 'application/json'
   }
 })
+// translate return result (fromServer) from server from string to json
   .then((fromServer) => fromServer.json())
   .then((jsonFromServer) => { 
     houseMembers.push(...jsonFromServer.members);
