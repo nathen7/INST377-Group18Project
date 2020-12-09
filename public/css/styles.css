@@ -149,10 +149,51 @@ body {
   .featurette-heading {
     font-size: 50px;
   }
+
 }
 
 @media (min-width: 62em) {
   .featurette-heading {
     margin-top: 7rem;
+  }
+}
+
+@media (min-width: 250px) {
+  #sideNav .navbar-brand .img-profile {
+    max-width: 4rem;
+    max-height: 4rem;
+    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+  }
+
+  #sideNav.navbar {
+    padding: auto;
+  }
+
+  #sideNav .nav-link {
+    padding: 0.5rem 0;
+  }
+}
+
+@media (min-width: 700px) {
+  #sideNav .navbar-brand .img-profile {
+    max-width: 7rem;
+    max-height: 7rem;
+    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+  }
+
+  #sideNav.navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  #sideNav .nav-link {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (min-width: 800px) {
+  #sideNav .navbar-brand .img-profile {
+    max-width: 10rem;
+    max-height: 10rem;
+    border: 0.5rem solid rgba(255, 255, 255, 0.2);
   }
 }
